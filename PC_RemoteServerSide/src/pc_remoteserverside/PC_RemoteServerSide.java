@@ -25,6 +25,7 @@ public class PC_RemoteServerSide {
 		// TODO Auto-generated method stub
                //vai ficar recebendo mensagens do telefone e dependendo da mensagem faz oq eu quiser
                //deve ficar dentro de um while para manter a conexao com somente um device
+               // rodar quando pc ligar
 		try {
                     ServerSocket serverSocket = new ServerSocket(2000);
                     
