@@ -48,8 +48,11 @@ public class PC_RemoteServerSide {
                         if (message.equals("aumenta volume")) {
                             upSystemVolume();
                         }
-                        if (message.equals("diminui volume")) {
+                        else if (message.equals("diminui volume")) {
                             downSystemVolume();
+                        }
+                        else if (message.equals("monitor off")) {
+                            turnOffMonitor();
                         }
                     }
                     
@@ -65,6 +68,20 @@ public class PC_RemoteServerSide {
 		
 
 	}
+        public static void turnOffMonitor() 
+        {
+                Runtime rt = Runtime.getRuntime();
+                Process pr;
+                try 
+                {   
+                    pr = rt.exec("D:\\Program Files (x86)\\nircmd.exe" + " monitor off ");
+
+                } 
+                catch (IOException e) 
+                {
+                    e.printStackTrace();
+                }
+        }
         public static void upSystemVolume()
         {
 
