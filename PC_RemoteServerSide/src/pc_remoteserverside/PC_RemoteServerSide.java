@@ -55,7 +55,7 @@ public class PC_RemoteServerSide {
                             turnOffMonitor();
                         }
                         else if (message.equals("desligar computador")) {
-                            turnOffMonitor();
+                            shutDown();
                         }
                     }   
                     
