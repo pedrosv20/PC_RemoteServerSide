@@ -26,6 +26,13 @@ public class PC_RemoteServerSide {
                //vai ficar recebendo mensagens do telefone e dependendo da mensagem faz oq eu quiser
                //deve ficar dentro de um while para manter a conexao com somente um device
                // rodar quando pc ligar
+               System.out.println(System.getProperty("os.name"));
+               if (System.getProperty("os.name").equals("Mac OS X")) {
+                   //mac os things
+                   
+               }
+               else {
+               
 		try {
                     ServerSocket serverSocket = new ServerSocket(2000);
                     
@@ -63,6 +70,7 @@ public class PC_RemoteServerSide {
                 catch (Exception e) {
                     e.printStackTrace();
                 } 
+               }
 		
 
 	}
