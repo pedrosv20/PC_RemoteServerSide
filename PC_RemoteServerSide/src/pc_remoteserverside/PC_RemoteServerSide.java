@@ -45,21 +45,19 @@ public class PC_RemoteServerSide {
                         }
 
                         System.out.println(message);
-                        if (message.equals("aumenta volume")) {
+                        if (message.equals("aumentar volume")) {
                             upSystemVolume();
                         }
-                        else if (message.equals("diminui volume")) {
+                        else if (message.equals("diminuir volume")) {
                             downSystemVolume();
                         }
-                        else if (message.equals("monitor off")) {
+                        else if (message.equals("desligar monitor")) {
                             turnOffMonitor();
                         }
-                    }
-                    
-                   
-                    
-                  
-                    
+                        else if (message.equals("desligar computador")) {
+                            turnOffMonitor();
+                        }
+                    }   
                     
                 } 
                 catch (Exception e) {
@@ -68,6 +66,20 @@ public class PC_RemoteServerSide {
 		
 
 	}
+        public static void shutDown()
+        {
+                Runtime rt = Runtime.getRuntime();
+                Process pr;
+                try 
+                {   
+                    pr = rt.exec("D:\\Program Files (x86)\\nircmd.exe" + " exitwin poweroff ");
+
+                } 
+                catch (IOException e) 
+                {
+                    e.printStackTrace();
+                }
+        }
         public static void turnOffMonitor() 
         {
                 Runtime rt = Runtime.getRuntime();
@@ -107,7 +119,6 @@ public class PC_RemoteServerSide {
         public static void downSystemVolume()
         {
 
-            
                 double endVolume = 655.35 * -10;
 
                 Runtime rt = Runtime.getRuntime();
