@@ -27,11 +27,7 @@ public class PC_RemoteServerSide {
                //deve ficar dentro de um while para manter a conexao com somente um device
                // rodar quando pc ligar
                System.out.println(System.getProperty("os.name"));
-               if (System.getProperty("os.name").equals("Mac OS X")) {
-                   //mac os things
-                   
-               }
-               else {
+               
                
 		try {
                     ServerSocket serverSocket = new ServerSocket(2000);
@@ -53,16 +49,24 @@ public class PC_RemoteServerSide {
 
                         System.out.println(message);
                         if (message.equals("aumentar volume")) {
-                            upSystemVolume();
+                            if (System.getProperty("os.name").equals("Mac OS X")) { break;/*mac os things*/ }
+                            else {upSystemVolume();}
+                            
                         }
                         else if (message.equals("diminuir volume")) {
-                            downSystemVolume();
+                            if (System.getProperty("os.name").equals("Mac OS X")) { break;/*mac os things*/ }
+                            else {downSystemVolume();}
+                            
                         }
                         else if (message.equals("desligar monitor")) {
-                            turnOffMonitor();
+                            if (System.getProperty("os.name").equals("Mac OS X")) { break;/*mac os things*/ }
+                            else {turnOffMonitor();}
+                            
                         }
                         else if (message.equals("desligar computador")) {
-                            shutDown();
+                            if (System.getProperty("os.name").equals("Mac OS X")) { break;/*mac os things*/ }
+                            else {shutDown();}
+                            
                         }
                     }   
                     
@@ -70,7 +74,7 @@ public class PC_RemoteServerSide {
                 catch (Exception e) {
                     e.printStackTrace();
                 } 
-               }
+               
 		
 
 	}
