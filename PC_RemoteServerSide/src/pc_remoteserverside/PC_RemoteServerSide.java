@@ -10,12 +10,15 @@ package pc_remoteserverside;
  * @author Pedro Vargas
  */
 import java.io.DataInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 
-//TODO desligar pc, mutar pc, desligar monitores, colocar isso no git
+
+//TODO, criar uma thread para cada cliente e matar ela depois de tantos segundos sem resposta.
+// procurar alternativas para controlar volume no 
 public class PC_RemoteServerSide {
 
 	/**
@@ -33,6 +36,7 @@ public class PC_RemoteServerSide {
                     ServerSocket serverSocket = new ServerSocket(2000);
                     
                     Socket socket = serverSocket.accept();
+                    System.out.println("aceitou cliente");
                     DataInputStream input = new DataInputStream(socket.getInputStream());
 
                     while (true){
@@ -49,7 +53,9 @@ public class PC_RemoteServerSide {
 
                         System.out.println(message);
                         if (message.equals("aumentar volume")) {
-                            if (System.getProperty("os.name").equals("Mac OS X")) { /*mac os things*/ }
+                            if (System.getProperty("os.name").equals("Mac OS X")) { 
+                                System.out.println("entrou teste");
+                               /* testeVolume(); mac os things*/ }
                             else {upSystemVolume();}
                             
                         }
@@ -78,6 +84,28 @@ public class PC_RemoteServerSide {
 		
 
 	}
+        
+        public static void testeVolume() throws InterruptedException {
+        //Runtime.getRuntime().exec("/usr/bin/osascript -e 'set volume 15'");
+                Runtime rt = Runtime.getRuntime();
+                Process pr;
+                try 
+                {   
+//                    System.out.println("osascript -e \"set Volume 1\"");
+//                    System.out.println("entrou teste");
+//                    ProcessBuilder pb = new ProcessBuilder("osascript -e \"set Volume 1\"");
+//                    pb.directory(new File("usr"));
+//                    Process p = pb.start();
+                    String [] cmd = {"/usr/bin", "sudo osascript -e", "\"set Volume 1\""};
+                    pr = rt.exec(cmd);
+                    
+
+                } 
+                catch (IOException e) 
+                {
+                    e.printStackTrace();
+                }
+        }
         public static void shutDown()
         {
                 Runtime rt = Runtime.getRuntime();

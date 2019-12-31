@@ -34,7 +34,7 @@ public class TestClient {
             
            Socket s = new Socket("192.168.0.15", 2000);
            DataOutputStream output = new DataOutputStream(s.getOutputStream());
-           output.write("desligar monitor".getBytes());
+           output.write("aumentar volume".getBytes());
            
            
           /*
