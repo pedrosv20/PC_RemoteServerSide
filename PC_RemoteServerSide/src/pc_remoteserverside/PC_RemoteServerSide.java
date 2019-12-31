@@ -49,22 +49,22 @@ public class PC_RemoteServerSide {
 
                         System.out.println(message);
                         if (message.equals("aumentar volume")) {
-                            if (System.getProperty("os.name").equals("Mac OS X")) { break;/*mac os things*/ }
+                            if (System.getProperty("os.name").equals("Mac OS X")) { /*mac os things*/ }
                             else {upSystemVolume();}
                             
                         }
                         else if (message.equals("diminuir volume")) {
-                            if (System.getProperty("os.name").equals("Mac OS X")) { break;/*mac os things*/ }
+                            if (System.getProperty("os.name").equals("Mac OS X")) { /*mac os things*/ }
                             else {downSystemVolume();}
                             
                         }
                         else if (message.equals("desligar monitor")) {
-                            if (System.getProperty("os.name").equals("Mac OS X")) { break;/*mac os things*/ }
+                            if (System.getProperty("os.name").equals("Mac OS X")) { /*mac os things*/ }
                             else {turnOffMonitor();}
                             
                         }
                         else if (message.equals("desligar computador")) {
-                            if (System.getProperty("os.name").equals("Mac OS X")) { break;/*mac os things*/ }
+                            if (System.getProperty("os.name").equals("Mac OS X")) { /*mac os things*/ }
                             else {shutDown();}
                             
                         }
