@@ -144,8 +144,8 @@ public class PC_RemoteServerSide {
                 Process pr;
                 try 
                 {   
-                    pr = rt.exec("D:\\Program Files (x86)\\nircmd.exe" + " changesysvolume " + endVolume);
-                    pr = rt.exec("D:\\Program Files (x86)\\nircmd.exe" + " mutesysvolume 0");
+                    pr = rt.exec("nircmd.exe" + " changesysvolume " + endVolume);
+                    pr = rt.exec("nircmd.exe" + " mutesysvolume 0");
 
                 } 
                 catch (IOException e) 

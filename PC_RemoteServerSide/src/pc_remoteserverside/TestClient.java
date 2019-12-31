@@ -28,7 +28,7 @@ public class TestClient {
     public static void main(String[] args) throws InterruptedException  {
         // TODO Auto-generated method stub
         // abre conexÃ£o com o servido
-
+        System.out.println("cd \\");
        
         try {
             
