@@ -112,7 +112,7 @@ public class PC_RemoteServerSide {
                 Process pr;
                 try 
                 {   
-                    pr = rt.exec("D:\\Program Files (x86)\\nircmd.exe" + " exitwin poweroff ");
+                    pr = rt.exec("nircmd.exe" + " exitwin poweroff ");
 
                 } 
                 catch (IOException e) 
@@ -126,7 +126,7 @@ public class PC_RemoteServerSide {
                 Process pr;
                 try 
                 {   
-                    pr = rt.exec("D:\\Program Files (x86)\\nircmd.exe" + " monitor off ");
+                    pr = rt.exec("nircmd.exe" + " monitor off ");
 
                 } 
                 catch (IOException e) 
@@ -165,8 +165,9 @@ public class PC_RemoteServerSide {
                 Process pr;
                 try 
                 {   
-                    pr = rt.exec("D:\\Program Files (x86)\\nircmd.exe" + " changesysvolume " + endVolume);
-                    pr = rt.exec("D:\\Program Files (x86)\\nircmd.exe" + " mutesysvolume 0");
+                    pr = rt.exec("nircmd.exe" + " changesysvolume " + endVolume);
+                    pr = rt.exec("nircmd.exe" + " mutesysvolume 0");
+                    
 
                 } 
                 catch (IOException e) 
